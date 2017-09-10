@@ -1,25 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Form2
-    conectdb(true)
-    Function conectdb(true) As Boolean
-        Dim conex As New MySqlConnection("server=localhost; port=3306; user id=root; password=1234; database=hotel")
-        Dim da As New MySqlDataAdapter
-        Dim dt As DataTable
-        Dim Sql As String
-        Try
-            Sql = "SELECT nro_habitacion FROM hotel.habitaciones"
-            da = New MySqlDataAdapter(Sql, conex)
-            dt = New DataTable
-            da.Fill(dt)
-            Datos.DataSource = dt
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Function
-    Private Sub TableLayoutPanel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs)
-
-
-    End Sub
+    Dim ServerString As String = "server=localhost;port=3306;user=root;password=1234;database=hotel"
+    Dim conexion As New MySqlConnection
+    Dim datos As DataSet
+    Dim adaptador As New MySqlDataAdapter
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
 
@@ -31,19 +15,25 @@ Public Class Form2
         Form5.Show()
     End Sub
 
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim SQLConnection As MySqlConnection = New MySqlConnection
+
+
+
+        Try
+            SQLConnection.ConnectionString = ServerString
+            conexion.Open()
+            Dim consulta As String
+            consulta = "SELECT nro_habitacion FROM hotel.habitaciones"
+            adaptador = New MySqlDataAdapter(consulta, conexion)
+            datos = New DataSet
+            adaptador.Fill(datos, "hotel.habitaciones")
+            DataGreedView1.DataSource = datos
+            DataGreedView1.DataMember = "hotel.habitaciones"
+        Catch Ex As Exception
+            MsgBox(Ex.Message)
+        End Try
 
     End Sub
 
-    Private Sub RadioButton3_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton3.CheckedChanged
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

@@ -30,13 +30,13 @@ Partial Class Form2
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Datos = New System.Windows.Forms.DataGridView()
+        Me.DataGreedView1 = New System.Windows.Forms.DataGridView()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Datos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGreedView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,13 +111,13 @@ Partial Class Form2
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'Datos
+        'DataGreedView1
         '
-        Me.Datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Datos.Location = New System.Drawing.Point(37, 35)
-        Me.Datos.Name = "Datos"
-        Me.Datos.Size = New System.Drawing.Size(541, 214)
-        Me.Datos.TabIndex = 16
+        Me.DataGreedView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGreedView1.Location = New System.Drawing.Point(37, 35)
+        Me.DataGreedView1.Name = "DataGreedView1"
+        Me.DataGreedView1.Size = New System.Drawing.Size(541, 214)
+        Me.DataGreedView1.TabIndex = 16
         '
         'RadioButton1
         '
@@ -145,7 +145,7 @@ Partial Class Form2
         '
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.Datos)
+        Me.GroupBox1.Controls.Add(Me.DataGreedView1)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 127)
         Me.GroupBox1.Name = "GroupBox1"
@@ -184,7 +184,7 @@ Partial Class Form2
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Datos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGreedView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -199,7 +199,7 @@ Partial Class Form2
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Datos As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGreedView1 As System.Windows.Forms.DataGridView
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox

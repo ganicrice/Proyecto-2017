@@ -1,0 +1,46 @@
+*habitaciones ocupadas
+SELECT *
+FROM hotel.estado_habitacion
+WHERE estado='ocupado'
+*habitaciones reservadas
+SELECT *
+FROM hotel.estado_habitacion
+WHERE estado='reservadas'
+*cantidad de habitaciones ocupadas
+SELECT Count(*) AS cantidad_ocupados
+FROM hotel.estado_habitacion
+WHERE estado='ocupado'
+*cantidad de habitaciones reservadas
+SELECT Count(*) AS cantidad_reservadas
+FROM hotel.estado_habitacion
+WHERE estado='reservado'
+*HABITACIONES LIBRES
+SELECT h.nro_habitacion
+FROM hotel.habitaciones h
+LEFT JOIN hotel.estado_habitacion eh
+ON h.nro_habitacion = eh.nro_habitacion
+WHERE eh.nro_habitacion IS NULL
+*CANTIDAD DE HABITACIONES libres
+SELECT count(h.nro_habitacion)
+FROM hotel.habitaciones h
+LEFT JOIN hotel.estado_habitacion eh
+ON h.nro_habitacion = eh.nro_habitacion
+WHERE eh.nro_habitacion IS NULL
+*LISTADO DE TODAS LAS HABITACIONES 
+SELECT nro_habitacion
+FROM hotel.habitaciones 
+*DADA UNA CEDULA, HABITACIONES RESERVADAS
+SELECT *
+FROM hotel.estado_habitacion
+WHERE nro_documento='11111111' AND estado='reservado'
+*DADA UNA CEDULA, HABITACIONES OCUPADAS
+SELECT *
+FROM hotel.estado_habitacion
+WHERE nro_documento='11111111' AND estado='ocupado'
+*buscar habitacion por su numero
+SELECT *
+FROM hotel.habitaciones h
+LEFT JOIN hotel.estado_habitacion eh
+ON h.nro_habitacion = eh.nro_habitacion
+WHERE h.nro_habitacion='302'
+
