@@ -34,6 +34,7 @@ Partial Class Form2
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGreedView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,7 +43,7 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(49, 451)
+        Me.Button1.Location = New System.Drawing.Point(52, 397)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
@@ -51,7 +52,7 @@ Partial Class Form2
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(278, 451)
+        Me.Button2.Location = New System.Drawing.Point(276, 397)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 6
@@ -60,7 +61,7 @@ Partial Class Form2
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(483, 451)
+        Me.Button3.Location = New System.Drawing.Point(518, 397)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 7
@@ -78,7 +79,7 @@ Partial Class Form2
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(761, 33)
+        Me.Button4.Location = New System.Drawing.Point(743, 12)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(65, 55)
         Me.Button4.TabIndex = 12
@@ -88,7 +89,7 @@ Partial Class Form2
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 513)
+        Me.Label6.Location = New System.Drawing.Point(12, 443)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(26, 13)
         Me.Label6.TabIndex = 13
@@ -97,7 +98,7 @@ Partial Class Form2
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(743, 513)
+        Me.Label8.Location = New System.Drawing.Point(694, 443)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(114, 13)
         Me.Label8.TabIndex = 15
@@ -133,31 +134,42 @@ Partial Class Form2
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(584, 54)
+        Me.RadioButton2.Location = New System.Drawing.Point(584, 111)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(204, 17)
+        Me.RadioButton2.Size = New System.Drawing.Size(198, 17)
         Me.RadioButton2.TabIndex = 18
         Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Mostrara solo habitaciónes ocupadas "
+        Me.RadioButton2.Text = "Mostrar solo habitaciónes ocupadas "
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton4)
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.DataGreedView1)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 127)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 121)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(831, 270)
+        Me.GroupBox1.Size = New System.Drawing.Size(793, 270)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(585, 64)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(168, 17)
+        Me.RadioButton4.TabIndex = 20
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Mostrar todas las habitaciones"
+        Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(585, 129)
+        Me.RadioButton3.Location = New System.Drawing.Point(584, 162)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(206, 17)
         Me.RadioButton3.TabIndex = 19
@@ -169,7 +181,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(869, 535)
+        Me.ClientSize = New System.Drawing.Size(814, 465)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
@@ -204,4 +216,5 @@ Partial Class Form2
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
 End Class

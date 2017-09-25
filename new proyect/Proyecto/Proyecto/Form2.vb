@@ -12,28 +12,94 @@ Public Class Form2
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Form5.Show()
+        Checkout.Show()
     End Sub
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim SQLConnection As MySqlConnection = New MySqlConnection
 
-
-
+        RadioButton4.Checked = True
         Try
-            SQLConnection.ConnectionString = ServerString
+            conexion.ConnectionString = ServerString
             conexion.Open()
             Dim consulta As String
-            consulta = "SELECT nro_habitacion FROM hotel.habitaciones"
+            consulta = "SELECT H.nro_habitacion, EH.estado, EH.nro_documento, EH.fecha_ingreso, EH.fecha_salida  FROM habitaciones H, estado_habitacion EH WHERE H.nro_habitacion = EH.nro_habitacion"
             adaptador = New MySqlDataAdapter(consulta, conexion)
             datos = New DataSet
-            adaptador.Fill(datos, "hotel.habitaciones")
+            adaptador.Fill(datos, "habitaciones")
             DataGreedView1.DataSource = datos
-            DataGreedView1.DataMember = "hotel.habitaciones"
+            DataGreedView1.DataMember = "habitaciones"
+            conexion.Close()
         Catch Ex As Exception
             MsgBox(Ex.Message)
         End Try
 
     End Sub
 
+    Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
+        Try
+            conexion.ConnectionString = ServerString
+            conexion.Open()
+            Dim consulta As String
+            consulta = "SELECT H.nro_habitacion, EH.estado, EH.nro_documento, EH.fecha_ingreso, EH.fecha_salida FROM habitaciones H, estado_habitacion EH WHERE H.nro_habitacion = EH.nro_habitacion AND EH.estado = 'ocupado'"
+            adaptador = New MySqlDataAdapter(consulta, conexion)
+            datos = New DataSet
+            adaptador.Fill(datos, "habitaciones")
+            DataGreedView1.DataSource = datos
+            DataGreedView1.DataMember = "habitaciones"
+            conexion.Close()
+        Catch Ex As Exception
+            MsgBox(Ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton3.CheckedChanged
+        Try
+            conexion.ConnectionString = ServerString
+            conexion.Open()
+            Dim consulta As String
+            consulta = "SELECT H.nro_habitacion, EH.estado, EH.nro_documento, EH.fecha_ingreso, EH.fecha_salida FROM habitaciones H, estado_habitacion EH WHERE H.nro_habitacion = EH.nro_habitacion AND EH.estado = 'reservado'"
+            adaptador = New MySqlDataAdapter(consulta, conexion)
+            datos = New DataSet
+            adaptador.Fill(datos, "habitaciones")
+            DataGreedView1.DataSource = datos
+            DataGreedView1.DataMember = "habitaciones"
+            conexion.Close()
+        Catch Ex As Exception
+            MsgBox(Ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton1.CheckedChanged
+        Try
+            conexion.ConnectionString = ServerString
+            conexion.Open()
+            Dim consulta As String
+            consulta = "SELECT H.nro_habitacion, EH.estado, EH.nro_documento, EH.fecha_ingreso, EH.fecha_salida FROM habitaciones H, estado_habitacion EH WHERE H.nro_habitacion = EH.nro_habitacion AND EH.estado = 'libre'"
+            adaptador = New MySqlDataAdapter(consulta, conexion)
+            datos = New DataSet
+            adaptador.Fill(datos, "habitaciones")
+            DataGreedView1.DataSource = datos
+            DataGreedView1.DataMember = "habitaciones"
+            conexion.Close()
+        Catch Ex As Exception
+            MsgBox(Ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RadioButton4_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton4.CheckedChanged
+        Try
+            conexion.ConnectionString = ServerString
+            conexion.Open()
+            Dim consulta As String
+            consulta = "SELECT H.nro_habitacion, EH.estado, EH.nro_documento, EH.fecha_ingreso, EH.fecha_salida  FROM habitaciones H, estado_habitacion EH WHERE H.nro_habitacion = EH.nro_habitacion"
+            adaptador = New MySqlDataAdapter(consulta, conexion)
+            datos = New DataSet
+            adaptador.Fill(datos, "habitaciones")
+            DataGreedView1.DataSource = datos
+            DataGreedView1.DataMember = "habitaciones"
+            conexion.Close()
+        Catch Ex As Exception
+            MsgBox(Ex.Message)
+        End Try
+    End Sub
 End Class
